@@ -13,13 +13,13 @@
     - Define `BatteryError` enum for error handling
     - _Requirements: 1.1, 2.1, 3.1, 4.1_
 
-- [ ] 3. Implement pmset integration and parsing
-  - [ ] 3.1 Create battery service module
+- [x] 3. Implement pmset integration and parsing
+  - [x] 3.1 Create battery service module
     - Implement `get_battery_info()` function that executes `pmset -g batt` command
     - Handle command execution errors and return appropriate BatteryError
     - _Requirements: 1.1, 1.3, 2.1_
   
-  - [ ] 3.2 Implement pmset output parser
+  - [x] 3.2 Implement pmset output parser
     - Write regex-based parser to extract battery percentage from pmset output
     - Parse charging status from keywords (charging, discharging, charged, AC attached)
     - Parse time remaining format (e.g., "2:30 remaining")

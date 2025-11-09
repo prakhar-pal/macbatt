@@ -1,4 +1,5 @@
 mod battery;
+mod display;
 mod types;
 
 use clap::Parser;

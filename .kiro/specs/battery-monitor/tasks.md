@@ -47,8 +47,8 @@
     - Test normal state
     - _Requirements: 5.1, 5.2, 6.1, 6.2_
 
-- [ ] 5. Implement CLI argument parsing
-  - [ ] 5.1 Create CLI configuration structure
+- [x] 5. Implement CLI argument parsing
+  - [x] 5.1 Create CLI configuration structure
     - Define `Config` struct with live_mode, refresh_interval, and threshold fields
     - Use clap derive macros to define command-line arguments
     - Add `--live` / `-l` flag for live mode
@@ -56,46 +56,43 @@
     - Add `--threshold` / `-t` argument with default value of 20 percent
     - _Requirements: 5.3, 7.1, 7.3, 8.1, 8.2, 9.1_
   
-  - [ ] 5.2 Add input validation
+  - [x] 5.2 Add input validation
     - Validate that refresh interval is a positive integer
     - Validate that threshold is between 1 and 100
     - Return appropriate error messages for invalid inputs
     - _Requirements: 8.3, 8.4_
 
-- [ ] 6. Implement display formatting and output
-  - [ ] 6.1 Create display formatter module
+- [x] 6. Implement display formatting and output
+  - [x] 6.1 Create display formatter module
     - Implement `format_battery_display()` function that takes BatteryInfo and BatteryState
     - Format battery percentage with % symbol
     - Format charging status as human-readable text (Charging, Discharging, Charged)
     - Format time remaining in "Xh Ym" format when available, "N/A" or "Calculating" otherwise
     - Format time to full charge in "Xh Ym" format when charging, "N/A" when discharging
     - Display "Fully Charged" when battery is at 100% and on AC power
+    - Only show time remaining when discharging, only show charge time when charging
     - _Requirements: 1.2, 2.2, 2.3, 2.4, 3.2, 3.3, 4.2, 4.3_
   
-  - [ ] 6.2 Implement color coding for battery states
+  - [x] 6.2 Implement color coding for battery states
     - Apply yellow color to percentage and add warning icon for Warning state
     - Apply red color to percentage and add error icon for Critical state
     - Use default colors for Normal state
     - Ensure error state has higher visual priority than warning state
     - _Requirements: 5.2, 6.2, 6.3_
-  
-  - [ ] 6.3 Implement screen clearing for live mode
-    - Create `clear_screen()` function using ANSI escape codes
-    - Add live mode indicator showing refresh interval
-    - Add "Press Ctrl+C to exit" message in live mode
-    - _Requirements: 7.2_
 
 - [ ] 7. Implement main control loop and execution modes
   - [ ] 7.1 Implement single-shot mode
     - Parse CLI arguments to get configuration
     - Call get_battery_info() once
     - Determine battery state based on threshold
-    - Format and display output
+    - Format and display output using format_battery_display()
     - Exit program after displaying information
     - _Requirements: 9.1, 9.2, 9.3_
   
-  - [ ] 7.2 Implement live mode
+  - [ ] 7.2 Implement live mode with screen clearing
     - Check if live mode flag is enabled
+    - Create `clear_screen()` function using ANSI escape codes
+    - Create `format_live_mode_indicator()` to show refresh interval and exit instructions
     - Enter infinite loop that runs until Ctrl+C
     - Clear screen at start of each iteration
     - Fetch battery info and determine state

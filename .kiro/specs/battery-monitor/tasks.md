@@ -5,8 +5,8 @@
   - Configure the binary crate settings if needed
   - _Requirements: All requirements depend on these dependencies_
 
-- [ ] 2. Implement core data models and types
-  - [ ] 2.1 Create battery data structures
+- [x] 2. Implement core data models and types
+  - [x] 2.1 Create battery data structures
     - Define `BatteryInfo` struct with percentage, status, time_remaining, and time_to_full fields
     - Define `ChargingStatus` enum with Charging, Discharging, Charged, and Unknown variants
     - Define `BatteryState` enum with Normal, Warning, and Critical variants

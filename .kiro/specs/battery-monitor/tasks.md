@@ -80,8 +80,8 @@
     - Ensure error state has higher visual priority than warning state
     - _Requirements: 5.2, 6.2, 6.3_
 
-- [ ] 7. Implement main control loop and execution modes
-  - [ ] 7.1 Implement single-shot mode
+- [x] 7. Implement main control loop and execution modes
+  - [x] 7.1 Implement single-shot mode
     - Parse CLI arguments to get configuration
     - Call get_battery_info() once
     - Determine battery state based on threshold
@@ -89,7 +89,7 @@
     - Exit program after displaying information
     - _Requirements: 9.1, 9.2, 9.3_
   
-  - [ ] 7.2 Implement live mode with screen clearing
+  - [x] 7.2 Implement live mode with screen clearing
     - Check if live mode flag is enabled
     - Create `clear_screen()` function using ANSI escape codes
     - Create `format_live_mode_indicator()` to show refresh interval and exit instructions
@@ -100,14 +100,14 @@
     - Sleep for configured refresh_interval duration
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 8.2_
   
-  - [ ] 7.3 Add graceful error handling
+  - [x] 7.3 Add graceful error handling
     - Handle BatteryError cases with user-friendly messages
     - Display "N/A" for unparseable fields while continuing with available data
     - Exit with appropriate error codes for fatal errors
     - Handle Ctrl+C gracefully in live mode (optional: use ctrlc crate)
     - _Requirements: 1.3, 3.3, 8.4_
 
-- [ ] 8. Wire everything together in main.rs
+- [x] 8. Wire everything together in main.rs
   - Import all modules (battery service, display formatter, CLI config)
   - Parse CLI arguments using clap
   - Implement main execution flow that branches between single-shot and live mode

@@ -7,15 +7,15 @@ use clap::Parser;
 #[command(about = "Battery monitoring tool for macOS", long_about = None)]
 pub struct Config {
     /// Enable live monitoring mode
-    #[arg(short, long)]
+    #[arg(short = 'l', long = "live")]
     pub live_mode: bool,
 
     /// Refresh interval in seconds for live mode
-    #[arg(short, long, default_value_t = 5)]
+    #[arg(short = 'i', long = "interval", default_value_t = 5)]
     pub refresh_interval: u64,
 
     /// Battery percentage threshold for warnings
-    #[arg(short, long, default_value_t = 20)]
+    #[arg(short = 't', long = "threshold", default_value_t = 20)]
     pub threshold: u8,
 }
 

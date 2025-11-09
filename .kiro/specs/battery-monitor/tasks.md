@@ -33,8 +33,8 @@
     - Test malformed output handling
     - _Requirements: 1.1, 2.1, 3.1, 4.1_
 
-- [ ] 4. Implement battery state determination logic
-  - [ ] 4.1 Create state evaluation function
+- [x] 4. Implement battery state determination logic
+  - [x] 4.1 Create state evaluation function
     - Implement `determine_battery_state()` that takes percentage and threshold
     - Return Normal state when percentage is above threshold
     - Return Warning state when percentage is below threshold but above threshold/2

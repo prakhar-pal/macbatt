@@ -1,4 +1,4 @@
-use crate::types::{BatteryError, BatteryInfo, ChargingStatus};
+use crate::types::{BatteryError, BatteryInfo, BatteryState, ChargingStatus};
 use regex::Regex;
 use std::process::Command;
 use std::time::Duration;
@@ -105,4 +105,22 @@ fn parse_time_to_full(output: &str) -> Option<Duration> {
     }
     
     None
+}
+
+/// Determines the battery state based on percentage and threshold
+/// 
+/// Returns:
+/// - Normal: when percentage is above threshold
+/// - Warning: when percentage is below threshold but above threshold/2
+/// - Critical: when percentage is below threshold/2
+pub fn determine_battery_state(percentage: u8, threshold: u8) -> BatteryState {
+    let critical_threshold = threshold / 2;
+    
+    if percentage < critical_threshold {
+        BatteryState::Critical
+    } else if percentage < threshold {
+        BatteryState::Warning
+    } else {
+        BatteryState::Normal
+    }
 }

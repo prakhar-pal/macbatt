@@ -3,7 +3,7 @@ use clap::Parser;
 
 /// CLI configuration for the battery monitor
 #[derive(Parser, Debug)]
-#[command(name = "macbatt")]
+#[command(name = "mcbatt")]
 #[command(about = "Battery monitoring tool for macOS", long_about = None)]
 pub struct Config {
     /// Enable live monitoring mode

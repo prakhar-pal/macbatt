@@ -1,4 +1,4 @@
-# macbatt
+# mcbatt
 
 A simple, elegant battery monitoring tool for macOS that displays battery status with color-coded warnings.
 
@@ -16,11 +16,11 @@ A simple, elegant battery monitoring tool for macOS that displays battery status
 
 ```bash
 git clone <repository-url>
-cd macbatt
+cd mcbatt
 cargo build --release
 ```
 
-The binary will be available at `target/release/macbatt`.
+The binary will be available at `target/release/mcbatt`.
 
 ### Install Locally
 
@@ -35,7 +35,7 @@ cargo install --path .
 Display current battery status:
 
 ```bash
-macbatt
+mcbatt
 ```
 
 Output example:
@@ -52,7 +52,7 @@ Time Left:   2h 27m
 Enable continuous monitoring with automatic updates:
 
 ```bash
-macbatt --live
+mcbatt --live
 ```
 
 This will clear the screen and update the battery status every 5 seconds (default).
@@ -62,7 +62,7 @@ This will clear the screen and update the battery status every 5 seconds (defaul
 Set a custom refresh interval (in seconds) for live mode:
 
 ```bash
-macbatt --live --interval 10
+mcbatt --live --interval 10
 ```
 
 ### Custom Warning Threshold
@@ -70,7 +70,7 @@ macbatt --live --interval 10
 Set a custom battery percentage threshold for warnings:
 
 ```bash
-macbatt --threshold 30
+mcbatt --threshold 30
 ```
 
 - **Normal**: Battery percentage is above the threshold (no indicator)
@@ -80,7 +80,7 @@ macbatt --threshold 30
 ### Combined Options
 
 ```bash
-macbatt --live --interval 3 --threshold 25
+mcbatt --live --interval 3 --threshold 25
 ```
 
 ## Command-Line Options
@@ -101,22 +101,22 @@ macbatt --live --interval 3 --threshold 25
 
 Check battery status once:
 ```bash
-macbatt
+mcbatt
 ```
 
 Monitor battery with 2-second updates:
 ```bash
-macbatt -l -i 2
+mcbatt -l -i 2
 ```
 
 Set warning threshold at 40%:
 ```bash
-macbatt -t 40
+mcbatt -t 40
 ```
 
 Live mode with custom threshold and interval:
 ```bash
-macbatt --live --threshold 35 --interval 10
+mcbatt --live --threshold 35 --interval 10
 ```
 
 ## License

@@ -94,7 +94,7 @@ macbatt --live --interval 3 --threshold 25
 
 ## Requirements
 
-- macOS (uses `pmset` command)
+- macOS (uses `ioreg` command)
 - Rust 1.70+ (for building from source)
 
 ## Examples

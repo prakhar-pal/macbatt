@@ -87,7 +87,7 @@ fn handle_error(error: BatteryError) {
         BatteryError::CommandFailed(msg) => {
             eprintln!("Error: Unable to retrieve battery information.");
             eprintln!("Details: {}", msg);
-            eprintln!("\nMake sure you are running this on macOS with pmset available.");
+            eprintln!("\nMake sure you are running this on macOS with ioreg available.");
             std::process::exit(1);
         }
         BatteryError::ParseError(msg) => {
